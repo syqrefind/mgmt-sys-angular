@@ -1,0 +1,23 @@
+
+
+/* .no-wrap {
+    border: 1px solid black;
+    width: 70px;
+    overflow: auto;
+    white-space: nowrap;
+    display: inline-block;
+} */
+
+.app-component{
+    position: absolute;
+    top:0;
+    left:0;
+    /* width: 1500px; */
+    width: 1500px;
+    height: 600px;
+
+    margin: 0;
+    padding: 0;
+    border: 1px black solid;
+    /* background-color: antiquewhite; */
+}

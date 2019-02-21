@@ -1,0 +1,48 @@
+<!-- <h1>this is table.compomnent!!!!!!!!</h1> -->
+<div id='top-line' class='whole-line'>
+  <div class='inline-blocks' id="task-details">Task Details</div>
+  <div class='inline-blocks' id="add-task">Add Task</div>
+</div>
+<div id='top-bar' class='whole-line'>
+
+  <div class="inline-blocks" id='show-div'>
+    <strong>Show </strong><select id='pagination'>
+          <option value="10" selected>10</option>
+          <option value='20'>20</option>
+          <option value='50'>50</option>
+        </select><strong> entries</strong>
+  </div>
+
+  <div class="inline-blocks" id='order-div'>
+    Order by:<select id='select-attribute'>
+          <option value="Contact" selected>Contact Name</option>
+          <option value='Due Date'>Due Date</option>
+          <option value='Quote Type'>Quote Type</option>
+          <option value='Quote#'>Quote Number</option>
+        </select> Descending: <input type='checkbox' id='descending'/>
+
+  </div>
+  <div class="inline-blocks" id='search-div'>
+    Search: <input name='search' id='search-input' class='inputs' type='text'/>
+  </div>
+</div>
+<app-table-row></app-table-row>
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let col of columns">
+        {{col}}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let char of characters | async">
+      <td *ngFor="let col of columns">
+        {{char[col]}}
+      </td>
+    </tr>
+  </tbody>
+  <div id='bot-bar'>
+
+  </div>
+</table>
