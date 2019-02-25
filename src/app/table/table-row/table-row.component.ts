@@ -20,13 +20,20 @@ export class TableRowComponent implements OnInit {
   columns: string[];
 
 
-  constructor(private atService: MockDataService)  {}
+  // constructor(private atService: MockDataService)  {}
+  constructor(private atService: MockDataService, private atService0: GetJsonService)  {}
 
   ngOnInit() {
-    this.columns = this.atService.getColumns();
-    // ["name", "age", "species", "occupation"]
-    this.characters = this.atService.getCharacters();
-    // all data in mock-data.ts
+
+    this.atService0.getJSON().subscribe(data => {
+      // console.log(`The following is data from component class!\n${data}`);
+      this.columns = this.atService.getColumns();
+      // ["name", "age", "species", "occupation"]
+      this.characters = this.atService.getCharacters();
+      // all data got from MockDataService
+      // console.log(`all data in the mock-date service is the following:\n${this.characters}`);
+    });
+
 
   }
 

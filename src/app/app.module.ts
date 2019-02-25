@@ -8,6 +8,7 @@ import { TableComponent } from './table/table.component';
 import { MockDataService } from './mock-data.service';
 import { TableRowComponent } from './table/table-row/table-row.component';
 import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { FormsModule } from '@angular/forms';
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    HttpClientModule,
   ],
   providers: [MockDataService],
   bootstrap: [AppComponent]

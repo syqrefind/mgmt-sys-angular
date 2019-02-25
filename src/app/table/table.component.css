@@ -57,10 +57,8 @@
 }
 
 #search-div{
-    display:inline-block;
-    position:absolute;
-    right:10px;
-
+    display:block;
+	float:right;
 }
 
 #bot-bar{

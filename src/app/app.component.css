@@ -9,15 +9,11 @@
 } */
 
 .app-component{
-    position: absolute;
-    top:0;
-    left:0;
-    /* width: 1500px; */
     width: 1500px;
-    height: 600px;
+    /* height: 600px; */
 
     margin: 0;
     padding: 0;
-    border: 1px black solid;
-    /* background-color: antiquewhite; */
+    border: 0;
+    /* border: 1px black solid; */
 }
