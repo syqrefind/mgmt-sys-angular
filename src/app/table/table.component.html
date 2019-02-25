@@ -1,4 +1,3 @@
-<!-- <h1>this is table.compomnent!!!!!!!!</h1> -->
 <div id='top-line' class='whole-line'>
   <div class='inline-blocks' id="task-details">Task Details</div>
   <div class='inline-blocks' id="add-task">Add Task</div>
@@ -6,11 +5,11 @@
 <div id='top-bar' class='whole-line'>
 
   <div class="inline-blocks" id='show-div'>
-    <strong>Show </strong><select id='pagination'>
-          <option value="10" selected>10</option>
-          <option value='20'>20</option>
-          <option value='50'>50</option>
-        </select><strong> entries</strong>
+    <strong>Show </strong>
+    <select type='number' [(ngModel)]="selectedDisplay" (ngModelChange)='toNumber()'>
+        <option *ngFor="let option of displayOptions" [ngValue]="option">{{option}}</option>
+    </select>
+    <strong> entries</strong>
   </div>
 
   <div class="inline-blocks" id='order-div'>
@@ -26,23 +25,10 @@
     Search: <input name='search' id='search-input' class='inputs' type='text'/>
   </div>
 </div>
-<app-table-row></app-table-row>
-<table>
-  <thead>
-    <tr>
-      <th *ngFor="let col of columns">
-        {{col}}
-      </th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let char of characters | async">
-      <td *ngFor="let col of columns">
-        {{char[col]}}
-      </td>
-    </tr>
-  </tbody>
-  <div id='bot-bar'>
+<app-table-row [display]=selectedDisplay [order]=selectedOrder [descending]=isDescending [search]=searchKeyword></app-table-row>
 
-  </div>
-</table>
+<div class='whole-line' id='bottom-bar'>
+
+  <div id='showing'>Showing 1 to 10 of 121 entires</div>
+  <div id='selectPage'>Previous Next</div>
+</div>

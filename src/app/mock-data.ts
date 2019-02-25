@@ -1,17 +1,13 @@
-// 'Due Date' is stored as strings in the `ISO 8601` format
-// Task is initially empty, need to be initialized later
-
-//export const CHARACTERS: any[] =
-let characters: any[] = 
+const characters: any[] =
 [
   {
     'Quote Type': 'DYR',
     'Quote#': 145,
     Contact: '',
-    Task:'',
+    Task: '',
     'Due Date': '2015-12-23T10:28:00Z',
     'Task Type': 'Follow-up',
-    Customers:['Summitworks Technologies Inc, Confcat-Anand D'],
+    Customers: ['Summitworks Technologies Inc, Confcat-Anand D'],
   },
   {
     'Quote Type': 'BF',
@@ -20,87 +16,87 @@ let characters: any[] =
     Task: '',
     'Due Date': '2015-12-23T10:18:00Z',
     'Task Type': 'Follow-up',
-    Customers:['AAA', 'Contcat-IIII JJJJ.'],
+    Customers: ['AAA', 'Contcat-IIII JJJJ.'],
   },
   {
-    'Quote Type': 'DYR',
+    'Quote Type': 'BF',
     'Quote#': undefined,
-    Contact:'',
-    Task:'tesw',
+    Contact: '',
+    Task: 'tesw',
     'Due Date': '2015-12-22T22:01:00Z',
     'Task Type': 'Follow-up',
-    Customers:[],
+    Customers: [],
   },
   {
     'Quote Type': 'DYR',
     'Quote#': 144,
-    Contact:'',
-    Task:'',
+    Contact: '',
+    Task: '',
     'Due Date': '2015-12-05T08:22:00Z',
     'Task Type': 'Follow-up',
-    Customers:['Summitworks Technologies', 'Contact-Tapan Dubey'],
+    Customers: ['Summitworks Technologies', 'Contact-Tapan Dubey'],
   },
   {
-    'Quote Type': 'DYR',
+    'Quote Type': 'BF',
     'Quote#': 212,
-    Contact:'',
-    Task:'',
+    Contact: '',
+    Task: '',
     'Due Date': '2015-12-05T08:02:00Z',
     'Task Type': 'Follow-up',
-    Customers:['Summitworks Technologies', 'Contact-Tapan Dubey'],
+    Customers: ['Summitworks Technologies', 'Contact-Tapan Dubey'],
   },
   {
-    'Quote Type': 'DYR',
+    'Quote Type': 'BF',
     'Quote#': 210,
-    Contact:'',
-    Task:'',
+    Contact: '',
+    Task: '',
     'Due Date': '2015-11-27T07:45:00Z',
     'Task Type': 'Follow-up',
-    Customers:['Acclaim Industries Ltd.', 'Contcat-Tapan Dubey'],
+    Customers: ['Acclaim Industries Ltd.', 'Contcat-Tapan Dubey'],
   },
   {
     'Quote Type': 'DYR',
     'Quote#': 142,
-    Contact:'',
-    Task:'',
+    Contact: '',
+    Task: '',
     'Due Date': '2015-11-27T07:34:00Z',
     'Task Type': 'Follow-up',
-    Customers:['Summitworks technologies', 'Contcat-test test'],
+    Customers: ['Summitworks technologies', 'Contcat-test test'],
   },
   {
     'Quote Type': 'DYR',
     'Quote#': 141,
-    Contact:'',
-    Task:'',
+    Contact: '',
+    Task: '',
     'Due Date': '2015-11-27T07:15:00Z',
     'Task Type': 'Follow-up',
-    Customers:['1000', 'Contcat-aa aa.'],
+    Customers: ['1000', 'Contcat-aa aa.'],
   },
   {
     'Quote Type': 'DYR',
     'Quote#': 135,
-    Contact:'',
-    Task:'',
+    Contact: '',
+    Task: '',
     'Due Date': '2015-11-27T07:18:00Z',
     'Task Type': 'Follow-up',
-    Customers:['2424', 'Contcat-444 444'],
+    Customers: ['2424', 'Contcat-444 444'],
   },
   {
-    'Quote Type': 'DYR',
-    'Quote#':205,
-    Contact:'',
-    Task:'',
+    'Quote Type': 'BF',
+    'Quote#': 205,
+    Contact: '',
+    Task: '',
     'Due Date': '2015-11-19T08:18:00Z',
     'Task Type': 'Follow-up',
-    Customers:['Summitworks technologies, Contcat-Anand Dubey'],
+    Customers: ['Summitworks technologies, Contcat-Anand Dubey'],
   },
-]
+];
 
-for (let obj of characters){
-  if (obj.Task == ''){
+for (const obj of characters) {
+  if (obj.Task === '') {
     obj.Task = `${obj['Quote Type']}-Quote ID ${obj['Quote#']}, Due Date ${obj['Due Date']}, ${obj.Customers}`;
   }
 }
 
-//console.log(CHARACTERS);
+// console.log(CHARACTERS);
 export const CHARACTERS = characters;

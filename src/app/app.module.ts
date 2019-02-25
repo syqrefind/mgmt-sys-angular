@@ -7,6 +7,7 @@ import { FirstPipePipe } from './first-pipe.pipe';
 import { TableComponent } from './table/table.component';
 import { MockDataService } from './mock-data.service';
 import { TableRowComponent } from './table/table-row/table-row.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { TableRowComponent } from './table/table-row/table-row.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
   ],
   providers: [MockDataService],
   bootstrap: [AppComponent]

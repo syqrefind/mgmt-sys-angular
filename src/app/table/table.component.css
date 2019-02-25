@@ -1,48 +1,42 @@
-/* .inline-blocks{
-    display: inline-block;
-} */
-#top-line{
-    position: absolute;
-    top: 0;
-    background-color: grey;
-    font-family: 'Courier New', Courier, monospace;
-    width: 1500px;
-    margin: 0;
-    border: 0;
-    padding: 0;
-    height: 30px;
+
+#top-line {
+	background-color: grey;
+	font-family: 'Courier New', Courier, monospace;
+	width: 100%;
+	margin: auto;
+	border: 0;
+	padding: 0;
+	height: 30px;
 }
-#task-details{
-    position: absolute;
-    text-align: left;
-    color: blue;
-    display: inline-block;
-    top: 0;
-    left: 31.6px;
-    bottom: 0;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 20px;
+
+
+#task-details {
+	text-align: left;
+	color: blue;
+	display: inline-block;
+	bottom: 0;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: 20px;
 }
-#add-task{
-    top: 0;
-    right: 0;
-    bottom: 0;
-    position: absolute;
-    background-color: aquamarine;
-    overflow: hidden;
-    white-space: nowrap;
-    display: inline-block;
+
+
+#add-task {
+	background-color: aquamarine;
+	overflow: hidden;
+	white-space: nowrap;
+	display: block;
+	float: right;
 }
-#top-bar{
-    position: relative;
-    /* right:0; */
-    /* top:30; */
-    margin-top: 30px;
-    font-family: 'Courier New', Courier, monospace;
-    width: 1500px;
-    margin-bottom: 0;
-    border:0;
-    padding:0;
+
+#top-bar {
+	/* position: relative; */
+	/* margin-top: 30px; */
+	font-family: 'Courier New', Courier, monospace;
+	width: 100%;
+	margin-bottom: 0;
+	border: 0;
+	padding: 0;
+	height: 30px;
 }
 
 #show-div{
@@ -50,6 +44,7 @@
     position: absolute;
     left:10px;
 }
+
 #pagination {
     display: inline-block;
 }
@@ -68,28 +63,17 @@
 
 }
 
-
-table {
-    margin: 0;
-    margin-left: 10px;
-    border: 0;
-    padding: 0;
-    width: 1500px;
-    position: relative;
-    top: 30px;
-    border-collapse: collapse;
+#bot-bar{
+	font-family: 'Courier New', Courier, monospace;
+	height: 30px;
 }
 
-tbody{
-    border-top: 3px solid black;
-    border-bottom: 3px solid black;
-}
-tr {
-    text-align: center;
-    border: 1px solid #ddd;
-    padding: 8px;
+#showing{
+	display: block;
+	float:left;
 }
 
-tr:hover {
-    background-color: #ddd;
+#selectPage{
+	display: block;
+	float:right;
 }

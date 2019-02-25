@@ -1,0 +1,22 @@
+<div>
+<table>
+  <thead>
+    <tr>
+      <th *ngFor="let col of columns">
+        {{col}}
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let char of characters | async">
+      <td *ngFor="let col of columns">
+        {{char[col]}}
+        <span *ngIf="col == columns[columns.length - 1]">eye write dialog</span>
+      </td>
+    </tr>
+  </tbody>
+  <div id='bot-bar'>
+
+  </div>
+</table>
+</div>
