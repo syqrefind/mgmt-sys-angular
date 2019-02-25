@@ -1,6 +1,8 @@
+# Task Management System
+
 ## Miscellaneous
 
-Open this file with `typora`.
+Open this file with `typora` to view the sequence diagram (or other markdown editors that support [JS Sequence Diagrams](https://bramp.github.io/js-sequence-diagrams/). Additional information can be found on [Draw Diagrams With Markdown](https://support.typora.io/Draw-Diagrams-With-Markdown/).
 
 ## Devlogs
 
