@@ -27,11 +27,12 @@ Note right of tableRowComponent: Show Details
 - [x] decouple `table` component from `table-row` component. 
 - [x] Make up the 121 entires of mock data; store it as `json`
 - [x] Use `httpClient` to get data from local path and set it to `localstorage` 
-- [ ] set up **modal** and **route** for "Add Task" button
+- [x] research about **Angular Material**
+- [ ] ==set up **modal** and **route** for "<u>View</u>" button==
+- [ ] ==set up new **route** & **page** for "<u>New Task</u>"==
 - [ ] showing current page (child)
 - [ ] pagination (select page) to be parents
 - [ ] decide whether the modal need to be a componnent
-- [ ] research about **Angular Material**
 - [ ] View Button - Sketch/finish the layout of the pop-up modal
 - [ ] Edit Button - contents in the table
 - [ ] Save Button - save updated information
@@ -54,6 +55,6 @@ is written as in `src/app/app.component.html`
 </div>
 ```
 
-
+Find more information on [Using a Package Manager](https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers) and [fa-coffee](https://fontawesome.com/v4.7.0/icon/coffee).
 
 ## Bug Fix

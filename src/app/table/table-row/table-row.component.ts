@@ -3,6 +3,8 @@ import { Component, OnInit, Input, } from '@angular/core';
 import { MockDataService } from '../../mock-data.service';
 import { GetJsonService } from '../../get-json.service';
 import { Observable } from 'rxjs';
+import { MatDialog } from '@angular/material';
+import { TableRowDetailsComponent } from './table-row-details/table-row-details.component';
 
 @Component({
   selector: 'app-table-row',
@@ -15,26 +17,32 @@ export class TableRowComponent implements OnInit {
   @Input() descending: boolean;
   @Input() search: string;
 
-
   characters: Observable<any[]>;
   columns: string[];
+  // status: string;
+  // dataObject: object;
 
+  constructor(private atService: MockDataService, private atService0: GetJsonService, public dialog: MatDialog) {}
 
-  // constructor(private atService: MockDataService)  {}
-  constructor(private atService: MockDataService, private atService0: GetJsonService)  {}
-
-  ngOnInit() {
-
-    this.atService0.getJSON().subscribe(data => {
-      // console.log(`The following is data from component class!\n${data}`);
-      this.columns = this.atService.getColumns();
-      // ["name", "age", "species", "occupation"]
-      this.characters = this.atService.getCharacters();
-      // all data got from MockDataService
-      // console.log(`all data in the mock-date service is the following:\n${this.characters}`);
+  openDialog(): void {
+    const dialogRef = this.dialog.open(TableRowDetailsComponent, {
+      width: '600px',
+      height: '400px',
     });
 
-
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('The dialog was closed');
+      console.log(result);
+    });
   }
+
+
+  ngOnInit() {
+    this.atService0.getJSON().subscribe(data => {
+      this.columns = this.atService.getColumns();
+      this.characters = this.atService.getCharacters();
+    });
+  }
+
 
 }

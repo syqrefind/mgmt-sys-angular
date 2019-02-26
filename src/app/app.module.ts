@@ -9,6 +9,10 @@ import { MockDataService } from './mock-data.service';
 import { TableRowComponent } from './table/table-row/table-row.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import 'hammerjs';
+import { MatInputModule, MatButtonModule } from '@angular/material';
+import { MatDialogModule } from '@angular/material/dialog';
+import { TableRowDetailsComponent } from './table/table-row/table-row-details/table-row-details.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +20,17 @@ import { HttpClientModule } from '@angular/common/http';
     LogDirective,
     FirstPipePipe,
     TableComponent,
-    TableRowComponent
+    TableRowComponent,
+    TableRowDetailsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    MatInputModule,
+    MatButtonModule,
+    MatDialogModule,
   ],
   providers: [MockDataService],
   bootstrap: [AppComponent]

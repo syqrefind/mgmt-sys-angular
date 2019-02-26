@@ -32,3 +32,5 @@ export class TableComponent implements OnInit {
     this.searchKeyword = '';
   }
 }
+
+// event binding - once value changed, pass new values to table-row-component
