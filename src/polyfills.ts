@@ -63,3 +63,4 @@ import 'zone.js/dist/zone';  // Included with Angular CLI.
  */
 // import 'core-js/es7/object';
 // import 'core-js/es7/array';
+import 'hammerjs';

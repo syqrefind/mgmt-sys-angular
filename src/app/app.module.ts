@@ -14,6 +14,7 @@ import { MatDialogModule, MatDialogRef, MatDialog, MAT_DIALOG_DATA } from '@angu
 import { TableRowDetailsComponent } from './table/table-row/table-row-details/table-row-details.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
+import { MatPaginatorModule } from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
     MatDialogModule,
     BrowserAnimationsModule,
     NoopAnimationsModule,
+    MatPaginatorModule,
   ],
   providers: [
     MockDataService,

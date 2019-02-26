@@ -25,10 +25,21 @@
     Search: <input name='search' id='search-input' class='inputs' type='text'/>
   </div>
 </div>
-<app-table-row [display]=selectedDisplay [order]=selectedOrder [descending]=isDescending [search]=searchKeyword></app-table-row>
 
-<div class='whole-line' id='bottom-bar'>
+<app-table-row [display]=selectedDisplay 
+              [order]=selectedOrder 
+              [descending]=isDescending 
+              [search]=searchKeyword
+              [length]="length"
+              [pageSize]="pageSize"
+              [pageSizeOptions]="pageSizeOptions"
+              [(pageIndex)]="pageIndex">
+              <!-- [pageIndex]="pageEvent.pageIndex"> -->
+</app-table-row>
 
-  <div id='showing'>Showing 1 to 10 of 121 entires</div>
-  <div id='selectPage'>Previous Next</div>
-</div>
+<!-- bound values below are the constants -->
+<mat-paginator [length]="length"
+            [pageSize]="pageSize"
+            [pageSizeOptions]="pageSizeOptions"
+            (page)="pageEvent = $event">
+</mat-paginator>

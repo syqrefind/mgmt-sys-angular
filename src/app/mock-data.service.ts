@@ -25,5 +25,7 @@ export class MockDataService {
   // updates this.CHARACTERS
   postCharacters(characters: Array<object>) {
     this.CHARACTERS = characters;
+    localStorage.removeItem('sample-data');
+    localStorage.setItem('sample-data', JSON.stringify(CHARACTERS));
   }
 }

@@ -1,5 +1,6 @@
 // This component should pass to its child messages incluidng: 1. #entries 2. Order by 3. Descending 4. Search Entry
 import { Component, OnInit } from '@angular/core';
+import { PageEvent } from '@angular/material';
 
 @Component({
   selector: 'app-table',
@@ -15,7 +16,21 @@ export class TableComponent implements OnInit {
   isDescending: boolean;
   searchKeyword: string;
 
+   // MatPaginator Inputs
+  length = 121;
+  pageSize = 10;
+  pageSizeOptions: number[] = [10, 20, 50];
+
+  // MatPaginator Output
+  pageEvent: PageEvent;
+
+  pageIndex = 0;
+
   constructor() {}
+
+  setPageSizeOptions(setPageSizeOptionsInput: string) {
+    this.pageSizeOptions = setPageSizeOptionsInput.split(',').map(str => +str);
+  }
 
   toNumber() {
     this.selectedDisplay = +this.searchKeyword;

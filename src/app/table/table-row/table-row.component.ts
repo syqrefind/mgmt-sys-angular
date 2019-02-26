@@ -1,5 +1,5 @@
 // This component should get 1. #entries 2. Order by 3. Descending 4. Search Entry
-import { Component, OnInit, Input, } from '@angular/core';
+import { Component, OnInit, Input, OnChanges} from '@angular/core';
 import { MockDataService } from '../../mock-data.service';
 import { GetJsonService } from '../../get-json.service';
 import { Observable } from 'rxjs';
@@ -11,11 +11,16 @@ import { TableRowDetailsComponent } from './table-row-details/table-row-details.
   templateUrl: './table-row.component.html',
   styleUrls: ['./table-row.component.css']
 })
-export class TableRowComponent implements OnInit {
+export class TableRowComponent implements OnInit, OnChanges {
   @Input() display: number;
   @Input() order: string;
   @Input() descending: boolean;
   @Input() search: string;
+
+  @Input() length: number;
+  @Input() pageSize: number;
+  @Input() pageIndex: number;
+  @Input() pageSizeOptions: Array<number>;
 
   characters: Observable<any[]>;
   columns: string[];
@@ -29,6 +34,10 @@ export class TableRowComponent implements OnInit {
 
   constructor(private atService1: MockDataService, private atService0: GetJsonService, public dialog: MatDialog) {}
 
+  ngOnChanges() {
+    // alert('pagination change detected');
+  }
+
   ngOnInit() {
     this.atService0.getJSON().subscribe(data => {
       this.columns = this.atService1.getColumns();
@@ -37,6 +46,7 @@ export class TableRowComponent implements OnInit {
 
     this.isEditable = 'false';
   }
+
 
   openDialog(): void {
     const dialogRef = this.dialog.open(TableRowDetailsComponent, {
@@ -59,7 +69,7 @@ export class TableRowComponent implements OnInit {
       }
     }
 
-    saveEdit() {
+    saveEdit() { // save to local storage
 
     }
 
