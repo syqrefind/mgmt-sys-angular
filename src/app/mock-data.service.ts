@@ -1,8 +1,9 @@
+// This service gets called every time changes are made.
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { of, merge } from 'rxjs';
 import { mapTo, delay } from 'rxjs/operators';
-// import { CHARACTERS } from './mock-data';
+import { CHARACTERS } from './mock-data';
 
 @Injectable()
 export class MockDataService {
@@ -19,5 +20,10 @@ export class MockDataService {
 
   getColumns(): string[] {
     return ['Quote Type', 'Quote#', 'Contact', 'Task', 'Due Date', 'Task Type'];
+  }
+
+  // updates this.CHARACTERS
+  postCharacters(characters: Array<object>) {
+    this.CHARACTERS = characters;
   }
 }

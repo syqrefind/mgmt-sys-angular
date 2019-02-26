@@ -21,13 +21,28 @@ export class TableRowComponent implements OnInit {
   columns: string[];
   // status: string;
   // dataObject: object;
+  editField: string;
+  isEditable: string;
 
-  constructor(private atService: MockDataService, private atService0: GetJsonService, public dialog: MatDialog) {}
+  // columns
+  // characters
+
+  constructor(private atService1: MockDataService, private atService0: GetJsonService, public dialog: MatDialog) {}
+
+  ngOnInit() {
+    this.atService0.getJSON().subscribe(data => {
+      this.columns = this.atService1.getColumns();
+      this.characters = this.atService1.getCharacters();
+    });
+
+    this.isEditable = 'false';
+  }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(TableRowDetailsComponent, {
       width: '600px',
       height: '400px',
+      data: {name: 'abc'},
     });
 
     dialogRef.afterClosed().subscribe(result => {
@@ -36,13 +51,38 @@ export class TableRowComponent implements OnInit {
     });
   }
 
+    toggleEdit() {
+      if (this.isEditable === 'false') {
+        this.isEditable = 'true';
+      } else {
+        this.isEditable = 'false';
+      }
+    }
 
-  ngOnInit() {
-    this.atService0.getJSON().subscribe(data => {
-      this.columns = this.atService.getColumns();
-      this.characters = this.atService.getCharacters();
-    });
-  }
+    saveEdit() {
 
+    }
+
+  // updateList(id: number, property: string, event: any) {
+  //   const editField = event.target.textContent;
+  //   this.personList[id][property] = editField;
+  // }
+
+  // changeValue(id: number, property: string, event: any) {
+  //   this.editField = event.target.textContent;
+  // }
+
+  // remove(id: any) {
+  //   this.awaitingPersonList.push(this.personList[id]);
+  //   this.personList.splice(id, 1);
+  // }
+
+  // add() {
+  //   if (this.awaitingPersonList.length > 0) {
+  //     const person = this.awaitingPersonList[0];
+  //     this.personList.push(person);
+  //     this.awaitingPersonList.splice(0, 1);
+  //   }
+  // }
 
 }

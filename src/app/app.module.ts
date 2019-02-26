@@ -9,10 +9,11 @@ import { MockDataService } from './mock-data.service';
 import { TableRowComponent } from './table/table-row/table-row.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import 'hammerjs';
 import { MatInputModule, MatButtonModule } from '@angular/material';
-import { MatDialogModule } from '@angular/material/dialog';
+import { MatDialogModule, MatDialogRef, MatDialog, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { TableRowDetailsComponent } from './table/table-row/table-row-details/table-row-details.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { TableRowDetailsComponent } from './table/table-row/table-row-details/ta
     TableComponent,
     TableRowComponent,
     TableRowDetailsComponent
+
   ],
   imports: [
     BrowserModule,
@@ -31,8 +33,14 @@ import { TableRowDetailsComponent } from './table/table-row/table-row-details/ta
     MatInputModule,
     MatButtonModule,
     MatDialogModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
   ],
-  providers: [MockDataService],
+  providers: [
+    MockDataService,
+    { provide: MatDialogRef, useValue: {} },
+    { provide: MAT_DIALOG_DATA, useValue: [] },
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
