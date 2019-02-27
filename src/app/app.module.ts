@@ -15,6 +15,27 @@ import { TableRowDetailsComponent } from './table/table-row/table-row-details/ta
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule } from '@angular/material/paginator';
+import { AddTaskComponent } from './add-task/add-task.component';
+import { RouterModule, Routes, provideRoutes } from '@angular/router';
+import { NotFoundComponent } from './not-found/not-found.component';
+
+const appRoutes: Routes = [
+  { path: '',
+    redirectTo: '/table',
+    pathMatch: 'full',
+  },
+  { path: 'add-task', component: AddTaskComponent },
+  { path: 'table', component: TableComponent,
+    children: [
+      { path: '', redirectTo: 'table-row', pathMatch: 'full'},
+      { path: 'table-row', component: TableRowComponent,
+        children: [
+          { path: '', redirectTo: 'table-row-details', pathMatch: 'full'},
+          { path: 'table-row-details', component: TableRowDetailsComponent },
+        ]},
+    ]},
+  { path: '**', component: NotFoundComponent},
+];
 
 @NgModule({
   declarations: [
@@ -23,7 +44,9 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     FirstPipePipe,
     TableComponent,
     TableRowComponent,
-    TableRowDetailsComponent
+    TableRowDetailsComponent,
+    AddTaskComponent,
+    NotFoundComponent
 
   ],
   imports: [
@@ -37,12 +60,17 @@ import { MatPaginatorModule } from '@angular/material/paginator';
     BrowserAnimationsModule,
     NoopAnimationsModule,
     MatPaginatorModule,
+    RouterModule.forRoot(
+      appRoutes,
+      { enableTracing: true }, // <-- debugging purposes only
+    ),
   ],
   providers: [
     MockDataService,
     { provide: MatDialogRef, useValue: {} },
     { provide: MAT_DIALOG_DATA, useValue: [] },
   ],
+  //bootstrap: [AppComponent, provideRoutes(appRoutes)]
   bootstrap: [AppComponent]
 })
 export class AppModule { }

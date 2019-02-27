@@ -12,6 +12,18 @@ The `table-component` will have the main table element, display options, and pag
 
 ## Structure
 
+#### List of Components
+
+`RootComponent`
+
+`TableComponent`
+
+`TableRowComponent`
+
+`TableRowDetailsComponent`
+
+
+
 ```sequence
 Note left of tableComponent: analyze Options & search
 Note left of tableComponent: make page selector for user
