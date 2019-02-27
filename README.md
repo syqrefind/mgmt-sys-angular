@@ -6,6 +6,8 @@ Open this file with [typora](https://typora.io) (an elegant markdown editor) to 
 
 ## Devlogs
 
+*(Outdated)*
+
 The `table-component` will have the main table element, display options, and page selection. The `table-row-component` will contain row data, an indicator of the current page, and the **pop-up modal**.
 
 ~~The `table-row-editor-component` will contain the innerHTML of a .~~
@@ -14,15 +16,13 @@ The `table-component` will have the main table element, display options, and pag
 
 #### List of Components
 
-`RootComponent`
+`AddTaskComponent`
 
 `TableComponent`
 
 `TableRowComponent`
 
 `TableRowDetailsComponent`
-
-
 
 ```sequence
 Note left of tableComponent: analyze Options & search
@@ -41,11 +41,11 @@ Note right of tableRowComponent: Show Details
 - [x] Use `httpClient` to get data from local path and set it to `localstorage` 
 - [x] research about **Angular Material**
 - [x] Edit Button - contents in the table
-- [ ] ==pagination in parents==
+- [ ] pagination in parents
 - [ ] showing `current-page` (child)
-- [ ] ==Save Button - save updated information==; eventually save changes in `localStorage`
-- [ ] ==set up **modal** and **route** for "<u>View</u>" button==
-- [ ] ==set up new **route** & **page** for "<u>New Task</u>"==
+- [ ] Save Button - save updated information; eventually save changes in `localStorage`
+- [ ] set up **modal** and **route** for "<u>View</u>" button
+- [ ] set up new **route** & **page** for "<u>New Task</u>"
 - [ ] 
 - [ ] decide whether the modal need to be a componnent
 - [ ] View Button - Sketch/finish the layout of the pop-up modal
@@ -54,8 +54,8 @@ Note right of tableRowComponent: Show Details
 
 ## Bug Fix/Redesign
 
-- [ ] ==Make the write of initial data to `localStorage` **one-time**==
-- [ ] ==read from `localStorage` every time changes are saved==
+- [ ] Make the write of initial data to `localStorage` **one-time**
+- [ ] read from `localStorage` every time changes are saved
 - [ ] only updata **edited entries** to `localStorage`
 - [ ] Make button clicks apply to its current row only
 - [ ] connect pagination length to length of data in `localStorage`
