@@ -17,6 +17,7 @@ import { NoopAnimationsModule } from '@angular/platform-browser/animations';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { AddTaskComponent } from './add-task/add-task.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { TitleCasePipe } from './title-case.pipe';
 
 
 @NgModule({
@@ -30,6 +31,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
     AddTaskComponent,
     NotFoundComponent,
     TableRowComponentDialog,
+    TitleCasePipe,
   ],
   imports: [
     BrowserModule,

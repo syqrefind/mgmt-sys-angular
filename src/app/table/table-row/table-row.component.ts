@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { TableRowDetailsComponent } from './table-row-details/table-row-details.component';
 import { Inject } from '@angular/core';
+import { TitleCasePipe } from '@angular/common';
 
 export interface DialogData {
   animal: string;
@@ -15,7 +16,7 @@ export interface DialogData {
 @Component({
   selector: 'app-table-row',
   templateUrl: './table-row.component.html',
-  styleUrls: ['./table-row.component.css']
+  styleUrls: ['./table-row.component.css'],
 })
 export class TableRowComponent implements OnInit, OnChanges {
   animal: string;
