@@ -18,13 +18,13 @@ export interface DialogData {
   styleUrls: ['./table-row-details.component.css']
 })
 export class TableRowDetailsComponent {
+  constructor() {}
+  // constructor(
+  //   public dialogRef: MatDialogRef<TableRowDetailsComponent>,
+  //   @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
 
-  constructor(
-    public dialogRef: MatDialogRef<TableRowDetailsComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
+  // onNoClick(): void {
+  //   this.dialogRef.close();
+  // }
 
 }

@@ -9,9 +9,10 @@
   </thead>
   <tbody>
     <tr *ngFor="let char of characters | async; let id = index;">
+      <!-- <td *ngFor="let col of columns" [(style.border-color)]="borderColor"]> -->
       <td *ngFor="let col of columns">
         <span [contentEditable]= "isEditable">{{char[col]}}</span>
-        <span *ngIf="col == columns[columns.length - 1]"><span id='eye' (click)="openDialog()"><i class="fas fa-eye"></i></span><span id='edit' (click)='toggleEdit()'><i class="fas fa-edit"></i></span><span id='comment' (click)='saveEdit()'><i class="fas fa-comment"></i></span></span>
+        <span *ngIf="col == columns[columns.length - 1]"><span id='eye' class='icons' (click)="openDialog()"><i class="fas fa-eye"></i></span><span id='edit' class='icons' (click)='toggleEdit()'><i class="fas fa-edit"></i></span><span class='icons' id='comment' (click)='saveEdit()'><i class="fas fa-comment"></i></span></span>
       </td>
     </tr>
   </tbody>
@@ -64,5 +65,3 @@
   <a href="" class="btn btn-default btn-rounded mb-4" data-toggle="modal" data-target="#modalLoginForm">Launch
     Modal Login Form</a>
 </div> -->
-
-<router-outlet></router-outlet>

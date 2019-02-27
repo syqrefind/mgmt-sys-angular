@@ -28,9 +28,11 @@
 	float: right;
 }
 
+#add-task:hover {
+	font-size: 105%;
+}
+
 #top-bar {
-	/* position: relative; */
-	/* margin-top: 30px; */
 	font-family: 'Courier New', Courier, monospace;
 	width: 100%;
 	margin-bottom: 0;

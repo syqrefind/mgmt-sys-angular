@@ -14,6 +14,8 @@ The `table-component` will have the main table element, display options, and pag
 
 ## Structure
 
+*(Outdated)*
+
 #### List of Components
 
 `AddTaskComponent`
@@ -41,19 +43,24 @@ Note right of tableRowComponent: Show Details
 - [x] Use `httpClient` to get data from local path and set it to `localstorage` 
 - [x] research about **Angular Material**
 - [x] Edit Button - contents in the table
+- [x] Figure out what `<router-outlet/>` does
+- [x] Add Task Page with route
+- [ ] Link to Add Task Page
+- [ ] Two-way bindings & Submit Form on Add Task Page
 - [ ] pagination in parents
 - [ ] showing `current-page` (child)
-- [ ] Save Button - save updated information; eventually save changes in `localStorage`
-- [ ] set up **modal** and **route** for "<u>View</u>" button
-- [ ] set up new **route** & **page** for "<u>New Task</u>"
-- [ ] 
-- [ ] decide whether the modal need to be a componnent
+- [ ] Save Button - save updated information; eventually save changes in `localStorage`; return to '/'
+- [x] set up *modal* or **Angular Material Dialog** for "<u>View</u>" button
+- [x] set up new **route** & **page** for "<u>New Task</u>"
+- [x] decide whether the modal(**dialog**) need to be a componnent (*It ends up being a **EntryComponent***)
 - [ ] View Button - Sketch/finish the layout of the pop-up modal
 
 ------
 
 ## Bug Fix/Redesign
 
+- [ ] <u>Fix Dialog opened with View Button</u> 
+- [ ] <u>Remove `TableRowDetailsComponent`</u>
 - [ ] Make the write of initial data to `localStorage` **one-time**
 - [ ] read from `localStorage` every time changes are saved
 - [ ] only updata **edited entries** to `localStorage`
@@ -62,6 +69,13 @@ Note right of tableRowComponent: Show Details
 - [ ] Lazy Loading: only read desired data entries for current display from `localStorage`
 
 ## UI/UX Refinement
+
+- [ ] On the Add Task Page, make Quote Type and Quote# inline with each other
+- [ ] Responsive Design using **Angular Material**
+
+## Future Work
+
+- [ ] Smart 404 Page
 
 ## Notes
 
@@ -81,4 +95,4 @@ is written as in `src/app/app.component.html`
 
 Find more information on [Using a Package Manager](https://fontawesome.com/how-to-use/on-the-web/setup/using-package-managers) and [fa-coffee](https://fontawesome.com/v4.7.0/icon/coffee).
 
-## Future Work
+## 

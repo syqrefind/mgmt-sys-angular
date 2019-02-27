@@ -28,4 +28,9 @@ export class MockDataService {
     localStorage.removeItem('sample-data');
     localStorage.setItem('sample-data', JSON.stringify(CHARACTERS));
   }
+  postOneObject(id: number, character: object) {
+    this.CHARACTERS[id] = character;
+    localStorage.removeItem('sample-data');
+    localStorage.setItem('sample-data', JSON.stringify(CHARACTERS));
+  }
 }

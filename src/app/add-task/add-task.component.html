@@ -1,4 +1,73 @@
-<!-- <base href="/add-task"> -->
-<p>
-  add-task works!
-</p>
+<form #taskForm="ngForm" (ngSubmit)="onSubmit(taskForm)">
+
+    <div class="container-fliud" style="background-color: #140D68">
+        <span style="color: white; font-size: 30px; font-family:fantasy;"> Add Task</span>
+    </div>
+      
+    <div class="form-group" style="margin-top:10px;">
+    <label for="Status">Status&nbsp;&nbsp;</label> 
+    <select>
+      <option value="open">Open</option>
+      <option value="closed">Closed</option>
+    </select>
+    </div>
+
+    <div class="form-group">
+      <label for="quoteType" class="col-md-6 control-label">Quote Type</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="quoteType" ngModel name="quoteType" placeholder="" required>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="quoteNum" class="col-md-6 control-label">Quote#</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="quoteNum" ngModel name="quoteNum" placeholder="" 
+        data-ng-change="numbersOnly()" required>
+      </div>
+    </div>
+    <div class="form-group">
+        <label for="taskType" class="col-sm-2 control-label">Task Type</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="taskType" ngModel name="taskType" placeholder="" required>
+        </div>
+    </div>
+    
+    <div class="form-group">
+        <label for="contactName" class="col-sm-2 control-label">Contact Name</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="contactName" ngModel name="contactName" placeholder="" required>
+        </div>
+    </div>
+    
+      <div class="form-group">
+        <label for="quote" class="col-sm-2 control-label">Quote</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="quote" ngModel name="quote" placeholder="">
+        </div>
+      </div>
+    
+      <div class="form-group">
+        <label for="dueDate" class="col-sm-2 control-label">Due Date</label>
+    
+        <div class="col-md-4">
+          <input type="text" placeholder="" class="form-control" ngModel name="dueDate" bsDatepicker 
+          data-ng-change="dateOnly()" required>
+        </div>
+        <div class="col-sm-4 time">
+          <!-- <datepicker></datepicker> -->
+        </div>
+    
+      </div>
+    
+      <div class="form-group">
+        <label for="taskDescription" class="col-sm-2 control-label">Task Description</label>
+        <div class="col-sm-9">
+          <textarea rows="5" type="text" class="form-control" id="taskDescription"
+            placeholder="" ngModel name="taskDescription" required></textarea>
+        </div>
+      </div>
+      
+      <button type="submit" class="btn btn-success" [disabled]="!taskForm.form.valid">Submit</button>
+      
+</form>

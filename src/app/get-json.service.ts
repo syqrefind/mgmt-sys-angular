@@ -9,6 +9,7 @@ import { Observable } from 'rxjs';
 export class GetJsonService {
 
   constructor(private http: HttpClient) {
+    // alert('Constructor of GetJsonService is called.');
     this.getJSON().subscribe(data => {
       localStorage.setItem('sample-data', JSON.stringify(data));
     });

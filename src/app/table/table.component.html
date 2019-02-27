@@ -1,6 +1,6 @@
 <div id='top-line' class='whole-line'>
   <div class='inline-blocks' id="task-details">Task Details</div>
-  <div class='inline-blocks' id="add-task"><i class="fas fa-tasks"></i> Add Task</div>
+  <div class='inline-blocks' id="add-task"><a [routerLink]="['/add-task']"><i class="fas fa-tasks"></i> Add Task</a></div>
 </div>
 <div id='top-bar' class='whole-line'>
 
@@ -43,5 +43,3 @@
             [pageSizeOptions]="pageSizeOptions"
             (page)="pageEvent = $event">
 </mat-paginator>
-
-<router-outlet></router-outlet>

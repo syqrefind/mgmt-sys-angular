@@ -3,8 +3,14 @@ import { Component, OnInit, Input, OnChanges} from '@angular/core';
 import { MockDataService } from '../../mock-data.service';
 import { GetJsonService } from '../../get-json.service';
 import { Observable } from 'rxjs';
-import { MatDialog } from '@angular/material';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { TableRowDetailsComponent } from './table-row-details/table-row-details.component';
+import { Inject } from '@angular/core';
+
+export interface DialogData {
+  animal: string;
+  name: string;
+}
 
 @Component({
   selector: 'app-table-row',
@@ -12,6 +18,9 @@ import { TableRowDetailsComponent } from './table-row-details/table-row-details.
   styleUrls: ['./table-row.component.css']
 })
 export class TableRowComponent implements OnInit, OnChanges {
+  animal: string;
+  name: string;
+
   @Input() display: number;
   @Input() order: string;
   @Input() descending: boolean;
@@ -23,14 +32,17 @@ export class TableRowComponent implements OnInit, OnChanges {
   @Input() pageSizeOptions: Array<number>;
 
   characters: Observable<any[]>;
+  temp: Array<object>;
   columns: string[];
-  // status: string;
-  // dataObject: object;
+
   editField: string;
   isEditable: string;
 
-  // columns
-  // characters
+  borderColor: string;
+  originalColor: string;
+
+  // columns: headers
+  // characters: Array<object>
 
   constructor(private atService1: MockDataService, private atService0: GetJsonService, public dialog: MatDialog) {}
 
@@ -39,24 +51,26 @@ export class TableRowComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.atService0.getJSON().subscribe(data => {
-      this.columns = this.atService1.getColumns();
-      this.characters = this.atService1.getCharacters();
-    });
+    // this.atService0.getJSON().subscribe(data => {
+    this.columns = this.atService1.getColumns();
+    this.characters = this.atService1.getCharacters();
+    // });
 
     this.isEditable = 'false';
+    this.originalColor = this.borderColor;
   }
 
 
   openDialog(): void {
-    const dialogRef = this.dialog.open(TableRowDetailsComponent, {
+    const dialogRef = this.dialog.open(TableRowComponentDialog, {
       width: '600px',
       height: '400px',
-      data: {name: 'abc'},
+      data: {name: this.name, animal: this.animal},
     });
 
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed');
+      this.animal = result;
       console.log(result);
     });
   }
@@ -64,8 +78,11 @@ export class TableRowComponent implements OnInit, OnChanges {
     toggleEdit() {
       if (this.isEditable === 'false') {
         this.isEditable = 'true';
+        this.borderColor = 'carol';
+        alert('The table entries are now editable!');
       } else {
         this.isEditable = 'false';
+        this.borderColor = this.originalColor;
       }
     }
 
@@ -94,5 +111,21 @@ export class TableRowComponent implements OnInit, OnChanges {
   //     this.awaitingPersonList.splice(0, 1);
   //   }
   // }
+
+}
+
+@Component({
+  selector: 'app-table-row-dialog',
+  templateUrl: './table-row-dialog.component.html',
+})
+export class TableRowComponentDialog{
+
+  constructor(
+    public dialogRef: MatDialogRef<TableRowComponentDialog>,
+    @Inject(MAT_DIALOG_DATA) public data: DialogData) {}
+
+  onNoClick(): void {
+    this.dialogRef.close();
+  }
 
 }
